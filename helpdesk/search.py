@@ -161,7 +161,7 @@ class Search:
         query.summarize(fields=["description"])
         query.scorer("DISMAX")
         query.with_scores()
-        query.dialect()
+        query.dialect(None)
 
         result = self.redis.ft(self.index_name).search(query)
 
